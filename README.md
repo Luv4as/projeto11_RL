@@ -1,5 +1,5 @@
 # Projeto tema 11 Aprendizagem por Reforço
-
+Grupo: Lucas Venancio, Luiz Mateus, José Rafael
 ## Dyna-Q e Prioritized Sweeping
 
 Objetivos por enquanto: 
