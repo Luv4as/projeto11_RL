@@ -1,9 +1,28 @@
 # Projeto tema 11 Aprendizagem por Reforço
-Grupo: Lucas Venancio, Luiz Mateus, José Rafael
+Grupo: Lucas Venancio, Luiz Matheus, José Rafael
 
-# Dyna-Q e Prioritized Sweeping
+# Dyna-Q e Dyna-Q com Prioritized Sweeping
 
-## Dyna-Q
+## Q-Learning
+Definição:
+Q-Learning é um algoritmo model-free que aprende uma política ótima ao estimar valores de ação-estado (valores Q).
+Como funciona: 
+- Q-Table: Armazena valores Q para cada par (estado, ação).
+- Atualização dos Valores Q: Usa a equação de Bellman:
+$$
+Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
+$$
+
+Sendo:
+- $α$: Taxa de aprendizado 
+- $γ$: Fator de desconto (valor futuro)
+- $r$: Recompensa imediata
+- $s′$: Próximo estado.
+
+### Observação importante:
+> $Q-Learning$ é model-free
+
+# Dyna-Q
 O Dyna-Q é um algoritmo de aprendizado por reforço de aprendizado baseado em modelo para otimizar o processo de tomada de decisão em ambientes complexos. Ele se destaca por sua capacidade de aprender tanto com a experiência real no ambiente quanto com um modelo interno simulado, permitindo uma aprendizagem mais rápida e eficiente.
 
 Em um agente de planejamento existem pelo menos dois papeis para experimentos reais: pode ser usado para melhorar um modelo (para deixa-lo mais compatível com o ambiente real) e pode ser usado diretamente para melhorar o valor da função e da política usando métodos de Aprendizagem por Reforço. O primeiro chamamos de Aprendizagem de Modelo, e o segundo chamamos de Aprendizagem por Reforço Direta. As possiveis relações entre experiência, modelo, valores e política estão resumidos no diagrama abaixo.
@@ -21,7 +40,7 @@ Aprendizado sem Modelo (Q-learning): O Dyna-Q utiliza o algoritmo Q-learning par
 
 - Planejamento: O Dyna-Q utiliza o modelo interno para planejar ações futuras. Ele simula sequências de ações e usa as informações do modelo para atualizar a função de valor Q. Esse processo de planejamento permite que o agente aprenda com experiências simuladas, acelerando o aprendizado.
 
-### Funcionamento do Dyna-Q
+## Funcionamento do Dyna-Q
 - Inicialização: O Dyna-Q inicializa a função de valor Q e o modelo interno do ambiente.
 
 - Interação com o Ambiente: O agente interage com o ambiente, escolhendo uma ação com base na função de valor Q atual e observando o próximo estado e a recompensa recebida.
@@ -42,10 +61,10 @@ Aprendizado sem Modelo (Q-learning): O Dyna-Q utiliza o algoritmo Q-learning par
  - Complexidade: O Dyna-Q é mais complexo do que os algoritmos que utilizam apenas aprendizado sem modelo, pois requer a manutenção de um modelo interno.
  - Dependência do Modelo: O desempenho do Dyna-Q depende da precisão do modelo interno. Se o modelo for impreciso, o Dyna-Q pode aprender a tomar decisões subótimas.
 
-## Prioritized Sweeping
+# Prioritized Sweeping
 Prioritized sweeping é uma técnica poderosa utilizada em algoritmos de aprendizado por reforço baseados em modelo para acelerar o processo de aprendizado. Sua principal vantagem reside na capacidade de priorizar a atualização de estados e ações com base em seu potencial de impacto no aprendizado, tornando o processo mais eficiente.
 
-#### Como Funciona o Prioritized Sweeping?
+## Como Funciona o Prioritized Sweeping?
 Manutenção de uma Fila de Prioridade: O algoritmo mantém uma fila de prioridade que contém estados e ações que precisam ser atualizados. A prioridade de cada item na fila é determinada por um critério específico, como o erro de previsão do modelo ou a magnitude da mudança na função de valor.
 
 - Inicialização da Fila: Inicialmente, a fila pode conter estados e ações aleatórios ou ser preenchida com base em algum conhecimento prévio do ambiente.
