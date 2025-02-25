@@ -9,9 +9,7 @@ Q-Learning é um algoritmo model-free que aprende uma política ótima ao estima
 Como funciona: 
 - Q-Table: Armazena valores Q para cada par (estado, ação).
 - Atualização dos Valores Q: Usa a equação de Bellman:
-$$
-Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
-$$
+$$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]$$
 
 Sendo:
 - $α$: Taxa de aprendizado 
@@ -29,7 +27,7 @@ Em um agente de planejamento existem pelo menos dois papeis para experimentos re
 
 ![diagrama circular com setas sobre as relações do modelo](https://github.com/Luv4as/projeto11_RL/blob/main/images/Captura%20de%20tela%202025-02-24%20213459.png)
 
-DIAGRAMA DE SETAS DO LIVRO
+> DIAGRAMA DE SETAS DO LIVRO
 
 Dyna-Q inclui todos os processos mostrados no diagrama acima, planejamento, ação, Aprendizagem por Modelo, e Aprendizagem por Reforço Direta, todos ocorrendo continuamente. Durante o planejamento, o algotimo Q-planning vai aleatoriamente pegar apenas um par de estado-ação que já foi previamente experiênciado, para que o modelo nunca use um par que ele não tem nenhuma informação.
 
