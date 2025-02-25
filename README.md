@@ -68,3 +68,7 @@ Manutenção de uma Fila de Prioridade: O algoritmo mantém uma fila de priorida
 
 - Overfitting: Se a prioridade for baseada em informações ruidosas ou incompletas, o prioritized sweeping pode levar a overfitting, onde o agente aprende a tomar decisões subótimas em situações específicas.
 
+
+## Fontes 
+[1] Reinforcement Learning: An Introduction Richard S. Sutton and Andrew G. Barto
+
