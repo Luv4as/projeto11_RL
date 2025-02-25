@@ -6,7 +6,15 @@ Grupo: Lucas Venancio, Luiz Mateus, José Rafael
 ## Dyna-Q
 O Dyna-Q é um algoritmo de aprendizado por reforço de aprendizado baseado em modelo para otimizar o processo de tomada de decisão em ambientes complexos. Ele se destaca por sua capacidade de aprender tanto com a experiência real no ambiente quanto com um modelo interno simulado, permitindo uma aprendizagem mais rápida e eficiente.
 
-- Componentes Principais do Dyna-Q
+Em um agente de planejamento existem pelo menos dois papeis para experimentos reais: pode ser usado para melhorar um modelo (para deixa-lo mais compatível com o ambiente real) e pode ser usado diretamente para melhorar o valor da função e da política usando métodos de Aprendizagem por Reforço. O primeiro chamamos de Aprendizagem de Modelo, e o segundo chamamos de Aprendizagem por Reforço Direta. As possiveis relações entre experiência, modelo, valores e política estão resumidos no diagrama abaixo.
+
+![diagrama circular com setas sobre as relações do modelo](https://github.com/Luv4as/projeto11_RL/blob/main/images/Captura%20de%20tela%202025-02-24%20213459.png)
+
+DIAGRAMA DE SETAS DO LIVRO
+
+Dyna-Q inclui todos os processos mostrados no diagrama acima, planejamento, ação, Aprendizagem por Modelo, e Aprendizagem por Reforço Direta, todos ocorrendo continuamente. Durante o planejamento, o algotimo Q-planning vai aleatoriamente pegar apenas um par de estado-ação que já foi previamente experiênciado, para que o modelo nunca use um par que ele não tem nenhuma informação.
+
+### Componentes Principais do Dyna-Q
 Aprendizado sem Modelo (Q-learning): O Dyna-Q utiliza o algoritmo Q-learning para aprender a função de valor Q, que estima a recompensa total esperada ao tomar uma determinada ação em um estado específico. O Q-learning é um método de aprendizado por reforço que não requer um modelo do ambiente, aprendendo diretamente com a experiência.
 
 - Aprendizado Baseado em Modelo: O Dyna-Q mantém um modelo interno do ambiente, que é uma representação das dinâmicas do ambiente. Esse modelo é aprendido a partir da experiência real do agente no ambiente. O modelo permite que o agente simule experiências e aprenda com elas, além de aprender com a experiência real.
