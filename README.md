@@ -9,6 +9,8 @@ Q-Learning é um algoritmo model-free que aprende uma política ótima ao estima
 Como funciona: 
 - Q-Table: Armazena valores Q para cada par (estado, ação).
 - Atualização dos Valores Q: Usa a equação de Bellman:
+
+
 $$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]$$
 
 Sendo:
